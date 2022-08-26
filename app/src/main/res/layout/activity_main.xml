@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="22dp"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/legend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Observables"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/btnCreateObservable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Basic Observable!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/legend" />
+
+    <Button
+        android:id="@+id/btnJustObservable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Just Observable!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCreateObservable" />
+
+    <Button
+        android:id="@+id/btnIterableObservable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Iterable Observable!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnJustObservable" />
+
+    <Button
+        android:id="@+id/btnRangeObservable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Range Observable!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnIterableObservable" />
+
+    <Button
+        android:id="@+id/btnIntervalObservable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Interval Observable!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnRangeObservable" />
+
+    <Button
+        android:id="@+id/btnTimerObservable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Timer Observable!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnIntervalObservable" />
+
+    <Button
+        android:id="@+id/btnCompletableObservable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Completable Observable!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnTimerObservable" />
+
+    <Button
+        android:id="@+id/btnSingleObservable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Single Observable!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCompletableObservable" />
+
+    <Button
+        android:id="@+id/btnMaybeObservable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Maybe Observable!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSingleObservable" />
+</androidx.constraintlayout.widget.ConstraintLayout>
