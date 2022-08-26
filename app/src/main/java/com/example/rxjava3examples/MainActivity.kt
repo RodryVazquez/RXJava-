@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.rxjava3examples.databinding.ActivityMainBinding
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.*
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.functions.Action
+import io.reactivex.rxjava3.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 
 const val TAG: String = "MAIN_ACTIVITY"
@@ -55,6 +57,15 @@ class MainActivity : AppCompatActivity() {
         binding.btnMaybeObservable.setOnClickListener {
             callMaybeObservable()
         }
+
+        binding.btnSubscribeOn.setOnClickListener {
+            subscribeOnExample()
+        }
+
+        binding.btnObserveOn.setOnClickListener {
+            observeOnExample(binding)
+        }
+
     }
 
     override fun onDestroy() {
@@ -180,4 +191,33 @@ class MainActivity : AppCompatActivity() {
     private fun readFile(): String {
         return "Dummy Content"
     }
+
+    //////////////////////////////////////////////////SUBSCRIBE ON
+
+    private fun subscribeOnExample() {
+        Observable.just(1, 2, 3, 4, 5)
+            .subscribeOn(Schedulers.computation())
+            .doOnNext { item ->
+                println("Pushing Item " + item + "on" + Thread.currentThread().name + "Thread")
+            }
+            .subscribe { item ->
+                println("Received Item" + item + "on" + Thread.currentThread().name + "Thread")
+            }
+    }
+
+    private fun observeOnExample(binding: ActivityMainBinding) {
+        Observable.just(1, 2, 3, 4, 5)
+            .subscribeOn(Schedulers.io())
+            .doOnNext { item ->
+                println("Pushing Item " + item + "on" + Thread.currentThread().name + "Thread")
+            }
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe { item ->
+                binding.btnObserveOn.text = "Observe On $item"
+                println("Received Item" + item + "on" + Thread.currentThread().name + "Thread")
+            }
+    }
+
+
+
 }

@@ -97,4 +97,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnSingleObservable" />
+
+    <Button
+        android:id="@+id/btnSubscribeOn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subscribe On!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnMaybeObservable" />
+
+
+    <Button
+        android:id="@+id/btnObserveOn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Observe On!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSubscribeOn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
